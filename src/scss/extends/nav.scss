@@ -2,6 +2,8 @@
     max-width: 1537px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .nav{
     height: 86px;
@@ -11,6 +13,11 @@
         height: 100%;
         align-items: flex-end;
         li{
+            &.logo-holder, &.lang-list{
+                a:hover:after{
+                    display: none;
+                }
+            }
             a{
                 text-transform: uppercase;
                 font-size: 19px;
@@ -18,22 +25,90 @@
                 white-space: nowrap;
                 font-family: 'Playfair', Arial, Helvetica, sans-serif;
                 font-weight: 700;
+                height: 27px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: center;
                 &:hover{
                     color: #a09595;
+                    &:after{
+                        position: absolute;
+                        content: '';
+                        bottom: -2px;
+                        width: 100px;
+                        height: 1px;
+                        display: block;
+                        background-color: #b9b9b9;
+                    }
                 }
                 &.phone-number{
                     font-family: 'open-sans', Arial, Helvetica, sans-serif;
                     font-size: 16px;
+                    font-weight: 400;
                     color: #999394;
                     display: flex;
+                    align-items: center;
+                    &:hover:after{
+                        display: none;
+                    }
                     .phone-img{
                         width: 27px;
                         height: 27px;
                         border-radius: 50%;
                         background-color: #bb8f72;
+                        margin-right: 15px;
+                        img{
+                            widows: 15px;
+                            height: 15px;
+                            margin: 6px;
+                           
+                        }
                     }
                 }
             }
+        }
+    }
+    .lang-list{
+        .lang-list__body{
+            li{
+                a{
+                    font-size: 12px;
+                    font-family: 'open-sans', Arial, Helvetica, sans-serif;
+                    font-weight: 400;
+                    margin-left: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 27px;
+                    height: 27px;
+                    color: #948d8d;
+                    border-radius: 50%;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    &.current{
+                        pointer-events: none;
+                        color: #f1e9e3;
+                        background-color: #bb8f72;
+                    }
+                }
+            }
+        }
+    }
+    .mobile-logo{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    ul.lang-list__body{
+        flex-wrap: wrap;
+        width: 27px;
+        flex-grow: 1;
+        justify-content: center;
+        li{
+            flex: 1 1 27px;
         }
     }
 }
