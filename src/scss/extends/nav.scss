@@ -1,0 +1,39 @@
+.container--large{
+    max-width: 1537px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav{
+    height: 86px;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: flex-end;
+        li{
+            a{
+                text-transform: uppercase;
+                font-size: 19px;
+                color: #1f1d1d;
+                white-space: nowrap;
+                font-family: 'Playfair', Arial, Helvetica, sans-serif;
+                font-weight: 700;
+                &:hover{
+                    color: #a09595;
+                }
+                &.phone-number{
+                    font-family: 'open-sans', Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                    color: #999394;
+                    display: flex;
+                    .phone-img{
+                        width: 27px;
+                        height: 27px;
+                        border-radius: 50%;
+                        background-color: #bb8f72;
+                    }
+                }
+            }
+        }
+    }
+}
